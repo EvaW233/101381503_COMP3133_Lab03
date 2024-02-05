@@ -6,7 +6,7 @@ const Restaurant = require('./models/restaurant');
 const app = express();
 const PORT = 3000;
 
-// Connection URI. Replace <password> with the actual password.
+// Connection URI.
 const mongoURI = 'mongodb+srv://evaw0929:Ilovecats1314@cluster0.pt8pr8x.mongodb.net/?retryWrites=true&w=majority';
 
 // Connect to MongoDB

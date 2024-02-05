@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Restaurant = require('./models/restaurant');
 const { MongoClient } = require('mongodb');
-// Seed data array
+
 const seedData = [
   {
     "address": {
@@ -126,7 +126,6 @@ const seedData = [
   }
 ];
 
-// Connection URI. Replace <password> with the actual password.
 const mongoURI = 'mongodb+srv://evaw0929:Ilovecats1314@cluster0.pt8pr8x.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -136,9 +135,9 @@ async function seedDatabase() {
   
     try {
       await client.connect();
-      const database = client.db(); // Connect to the default database
+      const database = client.db();
   
-      await database.collection('restaurants').deleteMany(); // Clear existing data
+      await database.collection('restaurants').deleteMany(); 
       const result = await database.collection('restaurants').insertMany(seedData);
       console.log(`${result.insertedCount} documents inserted successfully.`);
     } catch (error) {
